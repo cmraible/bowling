@@ -19,6 +19,10 @@ describe('BowlingGame', () => {
         game.roll(5);
     }
 
+    function rollStrike() {
+        game.roll(10);
+    }
+
     it('Tesing zero scores', () => {
         rollMany(20,0);
         assert.strictEqual(game.score(),0);
@@ -34,5 +38,13 @@ describe('BowlingGame', () => {
         game.roll(3);
         rollMany(17, 0);
         assert.strictEqual(game.score(), 16);
+    });
+
+    it('Testing one strike', () => {
+        rollStrike();
+        game.roll(3);
+        game.roll(4);
+        rollMany(16, 0);
+        assert.strictEqual(game.score(), 24);
     });
 });
