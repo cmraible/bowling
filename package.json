@@ -1,14 +1,8 @@
 {
-  "name": "BowlingGame",
+  "name": "bowling",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/cmraible/bowling.git",
   "author": "Chris Raible <chris@ghost.org>",
-  "license": "MIT",
-  "scripts": {
-    "test": "mocha BowlingGame.test.js"
-  },
-  "dependencies": {
-    "mocha": "^10.7.3"
-  }
+  "license": "MIT"
 }
