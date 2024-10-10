@@ -28,9 +28,14 @@ describe('FizzBuzz', () => {
         assert.strictEqual(value, false);
     });
 
-    it('Testing count 1-5', () => {
-        let list = fizzBuzz.count(5);
-        assert.deepEqual(list, ['1', '2', 'Fizz', '4', 'Buzz']);
+    it('Should return FizzBuzz for numbers divisible by both 3 and 5', () => {
+        let list = fizzBuzz.count(20);
+        assert.strictEqual(list[0], '1');
+        assert.strictEqual(list[1], '2');
+        assert.strictEqual(list[2], 'Fizz');
+        assert.strictEqual(list[3], '4');
+        assert.strictEqual(list[4], 'Buzz');
+        assert.strictEqual(list[14], 'FizzBuzz');
     });
 
 });
