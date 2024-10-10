@@ -3,10 +3,24 @@ class FizzBuzz {
     list = [];
 
     count(n) {
-        for(let i=0; i<n; i++) {
-            this.list[i] = i+1; 
+        for(let i=1; i<n+1; i++) {
+            if(this.isFizz(i)) {
+                this.list.push('Fizz');
+            } else if (this.isBuzz(i)) {
+                this.list.push('Buzz');
+            } else {
+                this.list.push(i.toString());
+            }
         }
         return this.list;
+    }
+
+    isFizz(n) {
+        return n%3 == 0;
+    }
+
+    isBuzz(n) {
+        return n%5 == 0;
     }
 }
 
