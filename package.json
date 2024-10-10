@@ -1,0 +1,8 @@
+{
+  "name": "bowling",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cmraible/bowling.git",
+  "author": "Chris Raible <chris@ghost.org>",
+  "license": "MIT"
+}
