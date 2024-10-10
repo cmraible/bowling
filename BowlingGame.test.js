@@ -47,4 +47,9 @@ describe('BowlingGame', () => {
         rollMany(16, 0);
         assert.strictEqual(game.score(), 24);
     });
+
+    it('Testing perfect game', () => {
+        rollMany(12, 10);
+        assert.strictEqual(game.score(), 300);
+    });
 });
