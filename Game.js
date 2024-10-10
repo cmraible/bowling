@@ -1,14 +1,30 @@
 class Game {
-
-    totalScore = 0;
+    rolls = [];
+    currentRoll = 0;
 
     roll = (pins) => {
-        this.totalScore += pins;
+        this.rolls[this.currentRoll++] = pins;
         return;
     }
 
     score = () => {
-        return this.totalScore;
+        let score = 0;
+        let frameIndex = 0;
+        for (let frame = 0; frame < 10; frame++) {
+            if (this.isSpare(frameIndex)) {
+                // spare
+                score += 10 + this.rolls[frameIndex+2];
+                frameIndex += 2;
+            } else {
+                score += this.rolls[frameIndex] + this.rolls[frameIndex+1];
+                frameIndex += 2;
+            }
+        }
+        return score;
+    }
+
+    isSpare = (frameIndex) => {
+        return this.rolls[frameIndex] + this.rolls[frameIndex+1] == 10;
     }
 
 }

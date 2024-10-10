@@ -4,7 +4,7 @@ const { before } = require('mocha');
 
 describe('BowlingGame', () => {
     let game;
-    before(() => {
+    beforeEach(() => {
         game = new Game();
     });
 
@@ -13,20 +13,26 @@ describe('BowlingGame', () => {
             game.roll(pins);
         }
     }
+    
+    function rollSpare() {
+        game.roll(5);
+        game.roll(5);
+    }
 
     it('Tesing zero scores', () => {
-        const n = 20;
-        const pins = 0;
-        
-        rollMany(n,pins);
+        rollMany(20,0);
         assert.strictEqual(game.score(),0);
     });
 
     it('Tesing one scores', () => {
-        const n = 20;
-        const pins = 1;
-        
-        rollMany(n,pins);
+        rollMany(20, 1);
         assert.strictEqual(game.score(),20);
+    });
+
+    it('Testing one spare', () => {
+        rollSpare();
+        game.roll(3);
+        rollMany(17, 0);
+        assert.strictEqual(game.score(), 16);
     });
 });
