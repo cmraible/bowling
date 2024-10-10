@@ -52,4 +52,19 @@ describe('BowlingGame', () => {
         rollMany(12, 10);
         assert.strictEqual(game.score(), 300);
     });
+
+    it('Testing a random game', () => {
+        game.roll(5);
+        game.roll(2); //7
+
+        rollStrike(); //10 + 10
+
+        rollSpare(); //10 + 3
+
+        game.roll(3);
+        game.roll(4); //7
+
+        rollMany(12, 0);
+        assert.strictEqual(game.score(), 47);
+    });
 });
