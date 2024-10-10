@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "https://github.com/cmraible/bowling.git",
   "author": "Chris Raible <chris@ghost.org>",
-  "license": "MIT"
+  "scripts": {
+    "test": "mocha BowlingGame.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^10.7.3"
+  }
 }
